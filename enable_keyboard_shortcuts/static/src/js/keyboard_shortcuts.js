@@ -97,3 +97,99 @@ $.ctrl('Z', function() {
 });
 
 
+//done
+//Delete the current object
+$.ctrl('190', function() {
+	$("a:contains('Delete')").each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+	$("a:contains('Supprimer')").each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+});
+
+$.ctrl('46', function() {
+	$("a:contains('Delete')").each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+	$("a:contains('Supprimer')").each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+});
+//done
+//add item ctrl +
+$.ctrl('107', function() {
+	$("td.o_form_field_x2many_list_row_add a").each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+
+});
+//done
+//remove item ctrl -
+$.ctrl('109', function() {
+	$("td.o_form_field_x2many_list_row_add").parent().prev().children('.o_list_record_delete').children('.fa-trash-o').each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+});
+
+//done
+//Duplicate the current object
+$.ctrl('D', function() {
+	$('a[data-section="other"]:contains("Duplicate")').each(function() {
+		if($(this).parents('.oe_sidebar_print').length == 0){
+			$(this).click();
+		}
+	});
+	$('a[data-section="other"]:contains("Dupliquer")').each(function() {
+		if($(this).parents('.oe_sidebar_print').length == 0){
+			$(this).click();
+		}
+	});
+});
+
+//done
+//Previous object
+$.shortcut('37', function() {
+	$('.o_pager_previous').each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+});
+
+//done
+//Next object
+$.shortcut('39', function() {
+	$('.o_pager_next').each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).click();
+		}
+	});
+});
+//update
+$.shortcut('112', function() {
+	$('.oe_subtotal_footer_separator button.oe_button.oe_form_button.oe_edit_only.oe_link').each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).trigger('click');
+		}
+	});
+	$("span:contains('(update)')").each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).parent().trigger('click');
+		}
+
+	});
+});
+
