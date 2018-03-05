@@ -18,6 +18,7 @@ $.shortcut = function(key, callback, args) {
         }
     });
 };
+
 //done
 //New object by Ctrl + enter
 $.ctrl('13', function() {
@@ -65,7 +66,6 @@ $.ctrl('S', function() {
 	}
 
 });
-
 //done
 //Save current pop-up and open new one
 $.ctrl('32', function() {
@@ -75,11 +75,24 @@ $.ctrl('32', function() {
 			ok = false
 		}
 	});
+		$('button.btn-primary:contains("حفظ و جديد")').each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).trigger('click');
+			ok = false
+		}
+	});
+
 });
 //done
 //Save current pop-up and close
 $.ctrl('C', function() {
 	$('button.btn-primary:contains("Save  & Close")').each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).trigger('click');
+			ok = false
+		}
+	});
+		$('button.btn-primary:contains("حفظ و إغلاق")').each(function() {
 		if($(this).parents('div:hidden').length == 0){
 			$(this).trigger('click');
 			ok = false
@@ -105,7 +118,7 @@ $.ctrl('190', function() {
 			$(this).click();
 		}
 	});
-	$("a:contains('Supprimer')").each(function() {
+	$("a:contains('حذف')").each(function() {
 		if($(this).parents('div:hidden').length == 0){
 			$(this).click();
 		}
@@ -118,7 +131,7 @@ $.ctrl('46', function() {
 			$(this).click();
 		}
 	});
-	$("a:contains('Supprimer')").each(function() {
+	$("a:contains('حذف')").each(function() {
 		if($(this).parents('div:hidden').length == 0){
 			$(this).click();
 		}
@@ -152,7 +165,7 @@ $.ctrl('D', function() {
 			$(this).click();
 		}
 	});
-	$('a[data-section="other"]:contains("Dupliquer")').each(function() {
+	$('a[data-section="other"]:contains("استنساخ")').each(function() {
 		if($(this).parents('.oe_sidebar_print').length == 0){
 			$(this).click();
 		}
@@ -186,6 +199,12 @@ $.shortcut('112', function() {
 		}
 	});
 	$("span:contains('(update)')").each(function() {
+		if($(this).parents('div:hidden').length == 0){
+			$(this).parent().trigger('click');
+		}
+
+	});
+	$("span:contains('(تحديث)')").each(function() {
 		if($(this).parents('div:hidden').length == 0){
 			$(this).parent().trigger('click');
 		}
